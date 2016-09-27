@@ -3,5 +3,5 @@
 @Library('commands') import com.elevenware.jenkins.pipelines.Pipeline
 
 new Pipeline() {
-  name = 'Test App
+  name 'Test App
 }.run()
