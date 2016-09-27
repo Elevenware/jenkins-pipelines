@@ -1,3 +1,6 @@
-def hello() {
-    echo "Hello"
+{ ->
+    hello() {
+        echo "hello"
+    }
+
 }
