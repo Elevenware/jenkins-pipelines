@@ -1,5 +1,5 @@
 #!groovy
 
-tracer {
+def tracer
 
-}
+tracer.hello()
