@@ -1,10 +1,15 @@
 def envs = ['integration', 'qa', 'staging', 'prod']
 
-for(String env: envs) {
+for(int i = 0; i < envs.size(); i++) {
 
+  String env = envs[i]
   stage name: env, concurrency: 1
     node {
       echo "Running $env"
-      input message: "Does http://localhost:8888/$env/ look good?"
+      if(i > 1) {
+        String last = envs[i=1]
+        input message: "Does http://localhost:8888/$last/ look good?"
+      }
+      
     }
 }
