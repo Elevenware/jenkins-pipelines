@@ -2,6 +2,4 @@
 
 @Library('commands') import com.elevenware.jenkins.pipelines.Pipeline
 
-new Pipeline() {
-
-}.run()
+new Pipeline().run()
