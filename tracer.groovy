@@ -1,6 +1,9 @@
 { ->
+
     hello() {
         echo "hello"
     }
 
 }
+
+this
