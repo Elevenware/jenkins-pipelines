@@ -7,3 +7,6 @@ stage(name: 'int') {
   pipeline.run(this)
 }
 
+windows {
+    bat "cmd /?"
+}
