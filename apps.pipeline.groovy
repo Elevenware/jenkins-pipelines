@@ -1,5 +1,7 @@
-['integration', 'qa', 'staging', 'prod'].each { env ->
- 
+def envs = ['integration', 'qa', 'staging', 'prod']
+
+for(String env: envs) {
+
   stage name: env, concurrency: 1
     node {
       echo "Running $env"
