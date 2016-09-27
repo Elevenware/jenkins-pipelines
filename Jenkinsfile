@@ -2,11 +2,6 @@
 
 @Library('commands') import com.elevenware.jenkins.pipelines.Pipeline
 
-def pipeline = new Pipeline()
-stage(name: 'int') {
-  pipeline.run(this)
-}
-
-tracer {
-   echo "hello"
-}
+new Pipeline() {
+  name = 'Test App
+}.run()
