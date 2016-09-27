@@ -8,5 +8,5 @@ stage(name: 'int') {
 }
 
 tracer {
-    bat "cmd /?"
+   echo "hello"
 }
