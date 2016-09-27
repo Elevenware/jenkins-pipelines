@@ -1,7 +1,7 @@
 #!groovy
 
-@Library('commands')
+@Library('commands') _ import com.elevenware.jenkins.pipelines.Pipeline
 
-def tracer
+def pipeline = new Pipeline()
+pipeline.run()
 
-tracer.hello()
