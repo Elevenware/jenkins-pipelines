@@ -1,0 +1,10 @@
+pipeline:
+  type: java
+  title: Canary/Java
+  group: Canary Apps
+  additionalLabel: java-one
+  notifyJira: true
+jdk: jdk-8u40
+chef:
+  app_name: canary-java
+  role: canary-java
