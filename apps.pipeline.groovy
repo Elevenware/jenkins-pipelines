@@ -1,15 +1,33 @@
-def envs = ['integration', 'qa', 'staging', 'prod']
+class Environment {
+
+  String name
+  boolean autopromote
+
+  Environment(String name, boolean autopromote = true) {
+    this.name = name
+    this.autopromote = autopromote
+  }
+
+}
+
+def envs = [
+  new Environment('integration'),
+  new Environment('qa', false),
+  new Environment('staging', false),
+  new Environment('production', true)
+]
 
 for(int i = 0; i < envs.size(); i++) {
 
-  String env = envs[i]
-  stage(name: env, concurrency: 1) 
+  Environment env = envs[i]
+  stage(name: env.name, concurrency: 1) 
     node {
-      echo "Running $env"
-      if(i > 0) {
-        String last = envs.get(i - 1)
+      
+      if(!env.autopromote) {
+        String last = envs.get(i - 1).name
         input message: "Does http://localhost:8888/$last/ look good?"
       }
+      echo "Running $env"
     }
       
   
