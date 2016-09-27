@@ -3,7 +3,7 @@ def envs = ['integration', 'qa', 'staging', 'prod']
 for(int i = 0; i < envs.size(); i++) {
 
   String env = envs[i]
-  stage(name: env, concurrency: 1) {
+  stage(name: env, concurrency: 1) 
     node {
       echo "Running $env"
       if(i > 1) {
@@ -12,5 +12,5 @@ for(int i = 0; i < envs.size(); i++) {
       }
     }
       
-  }
+  
 }
