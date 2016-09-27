@@ -1,4 +1,4 @@
-class Environment {
+class Environment implements Serializable {
 
   String name
   boolean autopromote
